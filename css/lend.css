@@ -1114,7 +1114,7 @@ progress {
 	}
 	.row-cols-md-6>* {
 		flex: 0 0 auto;
-		width: 16.6666666667%
+		
 	}
 	.col-md-auto {
 		flex: 0 0 auto;
@@ -1203,6 +1203,33 @@ progress {
 	}
 	.offset-md-11 {
 		margin-left: 91.6666666667%
+
+	}
+	.mtable {
+			width: 100%;
+			border: none;
+			table-layout: fixed;
+			font: normal 16px Arial, sans-serif;
+		  }
+		  
+		  .mtable th {
+			padding: 10px;
+			text-align: left;
+			background-color: #ddd;
+		  }
+		  
+		  .mtable td {
+			border-top: solid 1px #DADEE6;
+			padding: 10px;
+		  }
+		  
+		  td:last-child {
+			text-align: left;
+		  }
+		  
+		  td:nth-child(n+3) {
+			text-align: right;
+		  }
 	}
 	.g-md-0,
 	.gx-md-0 {
@@ -4568,8 +4595,8 @@ fieldset:disabled .btn {
 
 .card {
 	position: relative;
-	display: flex;
-	flex-direction: column;
+	display: center;
+	flex-direction: row;
 	min-width: 0;
 	word-wrap: break-word;
 	background-color: #fff;
