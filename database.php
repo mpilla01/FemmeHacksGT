@@ -14,13 +14,6 @@ function search_result($search_column, $search_value) {
         }else{
             $sql="SELECT * FROM libraryexcel WHERE ".$search_column."='".$search_value."'";
 
-            $res=$con->query($sql);
-
-            while($row=$res->fetch_assoc()){
-                echo 'First_name:  '.$row[$search_column];
-                }       
-
-            }
             $result = mysqli_query($db, $sql);
 
             while($row = mysqli_fetch_array($result, MYSQLI_NUM))
@@ -57,7 +50,7 @@ function search_result($search_column, $search_value) {
     $conn->close();
     return $db_data; */
 
-function write_db($title, $author, $booksubject, $state, $city, $isbn, $physicalcopy, $ebook, $audiobook, $email) {
+function write_db($title, $author, $booksubject, $state, $city, $isbn, $type, $email) {
     $servername = "127.0.0.1:3306"; 
     $username = "LendLearn";
     $password = "lend&learn";
@@ -70,7 +63,7 @@ function write_db($title, $author, $booksubject, $state, $city, $isbn, $physical
     } 
 
     $sql = "INSERT INTO libraryexcel 
-    VALUES ('".$title."', '".$author."', '".$booksubject."', '".$state."', '".$city."', '".$isbn."', '".$physicalcopy."', '".$ebook."', '".$audiobook."', '".$email."')";
+    VALUES ('".$title."', '".$author."', '".$booksubject."', '".$state."', '".$city."', '".$isbn."', '".$type."', '".$email."')";
 
     if ($conn->query($sql) === TRUE) {
         //echo "New record created successfully";
@@ -80,3 +73,4 @@ function write_db($title, $author, $booksubject, $state, $city, $isbn, $physical
 
     $conn->close();
 }
+?>
